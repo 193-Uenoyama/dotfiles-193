@@ -1,0 +1,6 @@
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+# マークダウンでtableを記述
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
