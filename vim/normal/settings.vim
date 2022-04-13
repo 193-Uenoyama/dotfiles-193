@@ -16,6 +16,7 @@ set virtualedit=onemore
 set showmatch
 set laststatus=2
 set wildmode=list:longest
+set background=dark
 
 " Tab系
 set expandtab

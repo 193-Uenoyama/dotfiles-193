@@ -6,7 +6,6 @@ repo = 'alvan/vim-closetag'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
-
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 
@@ -31,5 +30,28 @@ marged = 0
 rev = 'release'
 
 [[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 
+# 置換を強化
+[[plugins]]
+repo = 'markonm/traces.vim'
+
+# アイコンを表示
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+# fzf
+[[plugins]]
+repo = 'junegunn/fzf'
+build = '''
+./install
+# '''
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
