@@ -3,6 +3,7 @@
 ln -s ~/dotfiles-193/vim/.vimrc ~/.vimrc
 ln -s ~/dotfiles-193/vim/.gvimrc ~/.gvimrc
 ln -s ~/dotfiles-193/.tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles-193/.bashrc ~/.bashrc
  
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh ./installer.sh ~/.cache/dein

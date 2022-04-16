@@ -41,46 +41,9 @@ set runtimepath+=~/dotfiles-193/vim/
 runtime! normal/*.vim
 runtime! rich/*.vim
 
-
-"easymotion.vim
-let g:EasyMotion_do_mapping = 0
-nmap <space>s <plug>(easymotion-overwin-f2)
-nmap <space>w <plug>(easymotion-overwin-w)
-
-"closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.php,*.tpl,*.jsx,*.vue'
-
-"table-mode
-nnoremap <space>t :TableModeToggle<CR>
-
-"coc.nvim
-nmap <space>df <Plug>(coc-definition)
-
-"nerdtree
-nnoremap <space>o :NERDTreeToggle<CR>
-nnoremap <space>n :NERDTreeFocus<CR>
-let NERDTreeShowHidden=1
-
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-
-"vimdoc-ja
-set helplang=ja
-let g:dein#install_process_timeout=119
-
-"yankround
-nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
-
-" fzf.vim
-set runtimepath+=~/.fzf/bin/fzf
 
 ""airline
 ""powerline-extra-symbols

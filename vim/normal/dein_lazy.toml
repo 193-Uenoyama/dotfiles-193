@@ -1,4 +1,7 @@
 # マークダウンでtableを記述
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
+hook_add = '''
+nnoremap <space>t :TableModeToggle<CR>
+'''
 
