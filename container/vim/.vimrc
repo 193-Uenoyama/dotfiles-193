@@ -19,8 +19,8 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-  let s:plugins_toml_path = '~/dotfiles-193/container/vim/normal/dein.toml'
-  let s:plugins_lazy_toml_path = '~/dotfiles-193/container/vim/normal/dein_lazy.toml'
+  let s:plugins_toml_path = '~/vim/normal/dein.toml'
+  let s:plugins_lazy_toml_path = '~/vim/normal/dein_lazy.toml'
 
   call dein#load_toml(s:plugins_toml_path)
   call dein#load_toml(s:plugins_lazy_toml_path, {'lazy': 1})
@@ -37,7 +37,7 @@ endif
 call map(dein#check_clean(), "delete(v:val, 'rf')")
 "End dein Scripts-------------------------
 
-set runtimepath+=~/dotfiles-193/container/vim/
+set runtimepath+=~/vim/
 runtime! normal/*.vim
 runtime! rich/*.vim
 

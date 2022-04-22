@@ -34,7 +34,7 @@ set ignorecase
 set smartcase
 set wrapscan
 set hlsearch
-set shortmess -=S
+set shortmess-=S
 set backspace=indent,eol,start
 
 set encoding=utf-8

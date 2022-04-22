@@ -77,14 +77,14 @@ nmap <C-n> <Plug>(yankround-next)
 repo = 'ryanoasis/vim-devicons'
 
 # fzf
-[[plugins]]
-repo = 'junegunn/fzf'
-build = '''
-./install
-'''
-hook_add = '''
-nnoremap <space>f :Files<CR>
-'''
+# [[plugins]]
+# repo = 'junegunn/fzf'
+# build = '''
+# ./install
+# '''
+# hook_add = '''
+# nnoremap <space>f :Files<CR>
+# '''
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'

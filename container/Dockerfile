@@ -1,26 +1,39 @@
-FROM ubuntu:20.04
+FROM ubuntu:20.04 as builder
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+WORKDIR /
+
 RUN apt update && \
-  apt install -y nodejs \
-  curl \ 
+  apt install -y curl \ 
   git \
   make \
   clang \
-  libtool-bin
+  libtool-bin \
+  libxt-dev
 
+# install vim
 RUN git clone --depth 1 https://github.com/vim/vim.git && \
   cd vim/src && \
   make && \
-  make install 
+  make reconfig && \
+  make install
 
-RUN curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh && \
-  sh ./installer.sh ~/.cache/dein && \
-  rm ./installer.sh 
+# install dein
+RUN curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /dein_installer.sh
 
-COPY vim/ ~/
-  
-WORKDIR /home/project/
+# install fzf
+RUN git clone --depth 1 https://github.com/junegunn/fzf.git /.fzf && \
+  /.fzf/install
 
-# /usr/local/bin/vim
+# download volta
+RUN curl https://get.volta.sh | bash 
+
+
+FROM debian:10-slim
+COPY --from=builder /usr/local/bin/vim/ /usr/local/bin/vim
+COPY --from=builder /dein_installer.sh /dein_installer.sh
+COPY --from=builder /.fzf/bin/fzf /usr/local/bin/fzf
+COPY --from=builder /root/.volta/bin/volta /usr/local/bin/volta
+COPY . /root/
+WORKDIR /home/project
