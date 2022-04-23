@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ln -s ~/dotfiles-193/container/vim/.vimrc ~/.vimrc
-ln -s ~/dotfiles-193/container/vim/.gvimrc ~/.gvimrc
+ln -s ~/dotfiles-193/vim/.vimrc ~/.vimrc
+ln -s ~/dotfiles-193/vim/.gvimrc ~/.gvimrc
 ln -s ~/dotfiles-193/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles-193/.bashrc ~/.bashrc
  
