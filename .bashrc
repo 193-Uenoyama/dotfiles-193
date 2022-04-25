@@ -7,6 +7,7 @@ alias ..5='cd ../../../../..'
 alias d='docker'
 alias m='make'
 alias g='git'
+alias v='docker run -v `pwd`:/home/project/ --rm -it editor bash'
 
 if [ `which pbcopy` ] ; then
   alias cb='pbcopy'
