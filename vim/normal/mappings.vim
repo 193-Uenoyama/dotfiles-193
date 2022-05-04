@@ -27,11 +27,11 @@ vnoremap <C-d> <S-m><C-d>
 nnoremap [b :bprev<CR>
 nnoremap ]b :bnext<CR>
 " text edit
-nnoremap y "+y
+"nnoremap y "+y
 nnoremap x "_x
 nnoremap s "_s
 nnoremap gj <S-j>
-vnoremap y "+y 
+"vnoremap y "+y 
 vnoremap s "_s
 vnoremap v iw
 " window

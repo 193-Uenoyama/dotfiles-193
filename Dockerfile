@@ -1,14 +1,15 @@
 FROM ubuntu:20.04 as builder
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG home=/root
+ARG home=/home/editor
 
 RUN apt update && \
   apt install -y curl \ 
   git \
   clang \
   make \
-  libtool-bin
+  libtool-bin && \
+  mkdir -p ${home}
 
 # install vim(latest)
 RUN git clone https://github.com/vim/vim.git && \
@@ -16,13 +17,14 @@ RUN git clone https://github.com/vim/vim.git && \
   make install
 
 # install dein
-RUN curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/dein_installer.sh && \
-  sh ~/dein_installer.sh ~/.cache/dein
+RUN curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ${home}/dein_installer.sh
 
-# download volta and install node
-RUN curl https://get.volta.sh | bash && \
-  ${home}/.volta/bin/volta install node@16
+# install node
+RUN curl -s -O https://nodejs.org/dist/v16.15.0/node-v16.15.0-linux-x64.tar.xz && \
+  xz -dv node-v16.15.0-linux-x64.tar.xz && \
+  tar xfv node-v16.15.0-linux-x64.tar
 
+ENV PATH=$PATH:/node-v16.15.0-linux-x64/bin
 COPY ./vim ${home}/dotfiles-193/vim/
 RUN ln -s ${home}/dotfiles-193/vim/.vimrc ${home}/.vimrc 
 
