@@ -5,9 +5,10 @@ alias ..4='cd ../../../..'
 alias ..5='cd ../../../../..'
 
 alias d='docker'
+alias dc='docker-compose'
 alias m='make'
 alias g='git'
-alias v='docker run -v `pwd`:/home/project/ --rm -it editor bash'
+alias e='docker run -v `pwd`:/home/project/ --rm -it editor bash'
 
 if [ `which pbcopy` ] ; then
   alias cb='pbcopy'
