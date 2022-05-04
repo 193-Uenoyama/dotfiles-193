@@ -73,18 +73,18 @@ nmap <C-n> <Plug>(yankround-next)
 '''
 
 # アイコンを表示
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
+# [[plugins]]
+# repo = 'ryanoasis/vim-devicons'
 
 # fzf
-# [[plugins]]
-# repo = 'junegunn/fzf'
-# build = '''
-# ./install
-# '''
-# hook_add = '''
-# nnoremap <space>f :Files<CR>
-# '''
+[[plugins]]
+repo = 'junegunn/fzf'
+build = '''
+./install
+'''
+hook_add = '''
+nnoremap <space>f :Files<CR>
+'''
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
