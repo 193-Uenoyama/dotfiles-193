@@ -12,9 +12,7 @@ alias g='git'
 
 if [ `which pbcopy` ] ; then
   export CLIP_BOARD='pbcopy'
-fi
-
-if [ `which xsel` ] ; then
+elif [ `which xsel` ] ; then
   export CLIP_BOARD='xsel -bi'
 fi
 
@@ -36,3 +34,4 @@ function reservVimContainer() {
     docker exec -u `id -u`:`id -g` editor /home/editor/dein_installer.sh
   fi
 }
+
