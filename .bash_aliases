@@ -1,3 +1,5 @@
+shopt -s expand_aliases
+
 alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'

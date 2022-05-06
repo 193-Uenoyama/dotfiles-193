@@ -41,15 +41,11 @@ nnoremap <C-k> <C-w>2-
 nnoremap <C-l> <C-w>4>
 " other
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
-nnoremap <space>vim :e ~/simple_vimfiles/.vimrc<CR>
 nnoremap <S-u> <C-r>
 
 " insert mode
 inoremap ;j <ESC>
-inoremap ;p <C-o>p
-inoremap ;d <Delete>
 inoremap ;l <Right>
-inoremap ;h <Left>
 inoremap ;L <C-o>$
 inoremap ( ()<Left>
 inoremap { {}<Left>

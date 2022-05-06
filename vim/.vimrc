@@ -37,6 +37,8 @@ endif
 call map(dein#check_clean(), "delete(v:val, 'rf')")
 "End dein Scripts-------------------------
 
+let $BASH_ENV = "~/dotfiles-193/.bash_aliases"
+
 set runtimepath+=~/dotfiles-193/vim/
 runtime! normal/*.vim
 runtime! rich/*.vim
