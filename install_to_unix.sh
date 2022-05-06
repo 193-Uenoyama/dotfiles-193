@@ -9,7 +9,7 @@ echo "source ~/.bash_aliases" >> ~/.bashrc
 
 # install dein
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/installer.sh
-~/installer.sh ~/.cache/dein
+source ~/installer.sh ~/.cache/dein
 rm ~/installer.sh
 
 # install volta
