@@ -19,8 +19,8 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-  let s:plugins_toml_path = '~/dotfiles-193/vim/normal/dein.toml'
-  let s:plugins_lazy_toml_path = '~/dotfiles-193/vim/normal/dein_lazy.toml'
+  let s:plugins_toml_path = '~/dotfiles-193/vim/setting_files/dein.toml'
+  let s:plugins_lazy_toml_path = '~/dotfiles-193/vim/setting_files/dein_lazy.toml'
 
   call dein#load_toml(s:plugins_toml_path)
   call dein#load_toml(s:plugins_lazy_toml_path, {'lazy': 1})
@@ -40,8 +40,7 @@ call map(dein#check_clean(), "delete(v:val, 'rf')")
 let $BASH_ENV = "~/dotfiles-193/.bash_aliases"
 
 set runtimepath+=~/dotfiles-193/vim/
-runtime! normal/*.vim
-runtime! rich/*.vim
+runtime! setting_files/*.vim
 
 if has('conceal')
   set conceallevel=2 concealcursor=niv

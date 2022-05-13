@@ -15,6 +15,9 @@ rm ~/installer.sh
 # install volta
 curl https://get.volta.sh | bash
 
+# install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # font のインストール
 # git clone --depth 1 https://github.com/ryanoasis/nerd-fonts
 # cd nerd-fonts

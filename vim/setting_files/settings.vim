@@ -17,6 +17,8 @@ set showmatch
 set laststatus=2
 set wildmode=list:longest
 set background=dark
+set cursorline
+set cursorcolumn
 
 " Tab系
 set expandtab
