@@ -17,11 +17,11 @@ if [ ! -e ~/.bash_aliases ] ; then
 fi
 
 if [ $SHELL = "/bin/bash" ] ; then
-  if `! cat ~/.bash_profile | grep "source ~/.bash_aliases"` ; then
+  if ! cat ~/.bash_profile | grep "source ~/.bash_aliases" >> /dev/null ; then
     echo "source ~/.bash_aliases" >> ~/.bash_profile
   fi
 elif [ $SHELL = "/bin/zsh" ] ; then
-  if `! cat ~/.zshrc | grep "source ~/.bash_aliases"` ; then
+  if ! cat ~/.zshrc | grep "source ~/.bash_aliases" >> /dev/null ; then
     echo "source ~/.bash_aliases" >> ~/.zshrc
   fi
 fi
@@ -34,13 +34,21 @@ if [ ! -e ~/.cache/dein ] ; then
 fi
 
 if [ ! -e ~/.volta ] ; then
-  # install volta
+  # install nodejs from volta
   curl https://get.volta.sh | bash
 fi
 
 if [ ! -e ~/.tmux/plugins/tpm ] ; then
   # install tpm
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
+if [ ! -e ~/.cargo ] ; then
+  # install felix from cargo(rust)
+  curl https://sh.rustup.rs -sSf | sh
+  echo "source $HOME/.cargo/env" >> ~/.zshrc
+  source $HOME/.cargo/env
+  cargo install felix
 fi
 
 # font のインストール
