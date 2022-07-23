@@ -1,3 +1,4 @@
+### ファイルの編集 #########################################
 # 閉じタグを挿入する
 [[plugins]]
 repo = 'alvan/vim-closetag'
@@ -17,24 +18,27 @@ nmap <space>s <plug>(easymotion-overwin-f2)
 nmap <space>w <plug>(easymotion-overwin-w)
 '''
 
-[[plugins]]
-repo = 'preservim/nerdtree'
-hook_add = '''
-nnoremap <space>o :NERDTreeToggle<CR>
-nnoremap <space>n :NERDTreeFocus<CR>
-let NERDTreeShowHidden=1
-'''
-
 # コメントアウト
 [[plugins]]
 repo = 'tpope/vim-commentary'
 
+# 括弧補完
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+# 置換を強化
+[[plugins]]
+repo = 'markonm/traces.vim'
 
 # シンタックスハイライト
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
+hook_add = '''
+let g:polyglot_disable = ['csv']
+'''
 
 # LSP
 [[plugins]]
@@ -45,22 +49,12 @@ hook_add = '''
 nmap <space>df <Plug>(coc-definition)
 '''
 
+# スクリプトの実行
 [[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-hook_add = '''
-set helplang=ja
-let g:dein#install_process_timeout=119
-'''
+repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'LeafCage/yankround.vim'
-
-[[plugins]]
-repo = 'vim-airline/vim-airline'
-
-# 置換を強化
-[[plugins]]
-repo = 'markonm/traces.vim'
 hook_add = '''
 nmap p <Plug>(yankround-p)
 xmap p <Plug>(yankround-p)
@@ -72,9 +66,15 @@ nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 '''
 
-# アイコンを表示
-# [[plugins]]
-# repo = 'ryanoasis/vim-devicons'
+
+### ファイルを開く #########################################
+[[plugins]]
+repo = 'preservim/nerdtree'
+hook_add = '''
+nnoremap <space>o :NERDTreeToggle<CR>
+nnoremap <space>n :NERDTreeFocus<CR>
+let NERDTreeShowHidden=1
+'''
 
 # fzf
 [[plugins]]
@@ -88,3 +88,28 @@ nnoremap <space>f :Files<CR>
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
+
+
+### サポート ###############################################
+[[plugins]]
+repo = 'reireias/vim-cheatsheet'
+hook_add = '''
+let g:cheatsheet#cheat_file = '~/dotfiles-193/vim/cheatsheet'
+'''
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+hook_add = '''
+set helplang=ja
+let g:dein#install_process_timeout=119
+'''
+
+
+### 見た目 #################################################
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+# アイコンを表示
+# [[plugins]]
+# repo = 'ryanoasis/vim-devicons'
+

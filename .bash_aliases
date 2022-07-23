@@ -13,6 +13,7 @@ alias d='docker'
 alias dc='docker-compose'
 alias m='make'
 alias g='git'
+alias vi='vim -u NONE -N'
 
 alias e='reservVimContainer && docker exec -u `id -u`:`id -g` -it editor bash'
 alias eup='reservVimContainer && docker exec -u `id -u`:`id -g` -it editor bash'
