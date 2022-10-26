@@ -1,0 +1,6 @@
+[submodule "submodules/tpm"]
+	path = submodules/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "submodules/fzf"]
+	path = submodules/fzf
+	url = https://github.com/junegunn/fzf

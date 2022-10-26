@@ -77,17 +77,18 @@ let NERDTreeShowHidden=1
 '''
 
 # fzf
-[[plugins]]
-repo = 'junegunn/fzf'
-build = '''
-./install
-'''
-hook_add = '''
-nnoremap <space>f :Files<CR>
-'''
+# [[plugins]]
+# repo = 'junegunn/fzf'
+# build = '''
+# ./install
+# '''
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
+hook_add = '''
+nnoremap <space>f :Files<CR>
+set rtp+=~/.fzf
+'''
 
 
 ### サポート ###############################################

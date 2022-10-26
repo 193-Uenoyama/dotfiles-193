@@ -1,19 +1,22 @@
 #!/bin/bash
+dotfile_dir_path=~/dotfiles-193/
+dotfile_vim_path=${dotfile_dir_path}/vim
+dotfile_submodules_path=${dotfile_dir_path}/submodules
 
 if [ ! -e ~/.vimrc ] ; then
-  ln -s ~/dotfiles-193/vim/.vimrc ~/.vimrc
+  ln -s ${dotfile_vim_path}/vim/.vimrc ~/.vimrc
 fi
 
 if [ ! -e ~/.gvimrc ] ; then
-  ln -s ~/dotfiles-193/vim/.gvimrc ~/.gvimrc
+  ln -s ${dotfile_vim_path}/vim/.gvimrc ~/.gvimrc
 fi
 
 if [ ! -e ~/.tmux.conf ] ; then
-  ln -s ~/dotfiles-193/.tmux.conf ~/.tmux.conf
+  ln -s ${dotfile_vim_path}/.tmux.conf ~/.tmux.conf
 fi
 
 if [ ! -e ~/.bash_aliases ] ; then
-  ln -s ~/dotfiles-193/.bash_aliases ~/.bash_aliases
+  ln -s ${dotfile_vim_path}/.bash_aliases ~/.bash_aliases
 fi
 
 if [ $SHELL = "/bin/bash" ] ; then
@@ -27,28 +30,34 @@ elif [ $SHELL = "/bin/zsh" ] ; then
 fi
 
 if [ ! -e ~/.cache/dein ] ; then
-  # install dein
+  echo "install dein"
   curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/installer.sh
   source ~/installer.sh ~/.cache/dein
   rm ~/installer.sh
 fi
 
 if [ ! -e ~/.volta ] ; then
-  # install nodejs from volta
+  echo "install volta"
   curl https://get.volta.sh | bash
 fi
 
-if [ ! -e ~/.tmux/plugins/tpm ] ; then
-  # install tpm
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-fi
-
 if [ ! -e ~/.cargo ] ; then
-  # install felix from cargo(rust)
+  echo "install felix from cargo(rust)"
   curl https://sh.rustup.rs -sSf | sh
   echo "source $HOME/.cargo/env" >> ~/.zshrc
   source $HOME/.cargo/env
   cargo install felix
+fi
+
+if [ ! -e ~/.tmux/plugins/tpm ] ; then
+  echo "install tpm"
+  ln -s ${dotfile_submodules_path}/tpm ~/.tmux/plugins/tpm
+fi
+
+if [ ! -e ~/.fzf ] ; then
+  echo "install fzf"
+  ln -s ${dotfile_submodules_path}/fzf ~/.fzf
+  ~/.fzf/install
 fi
 
 # font のインストール
