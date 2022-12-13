@@ -47,6 +47,7 @@ nnoremap <S-u> <C-r>
 inoremap ;j <ESC>
 inoremap ;l <Right>
 inoremap ;L <C-o>$
+inoremap ;p <C-o>p
 
 " terminal mode
 tnoremap ;j <C-w><S-n>
