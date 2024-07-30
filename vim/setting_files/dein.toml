@@ -46,25 +46,26 @@ repo = 'neoclide/coc.nvim'
 marged = 0
 rev = 'release'
 hook_add = '''
+nmap <space>ho :<C-u>call CocAction('doHover')<cr>
 nmap <space>df <Plug>(coc-definition)
-'''
-
+nmap <space>rf <Plug>(coc-references)
+nmap <space>rn <Plug>(coc-rename)
 # スクリプトの実行
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 
-[[plugins]]
-repo = 'LeafCage/yankround.vim'
-hook_add = '''
-nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
-'''
+# [[plugins]]
+# repo = 'LeafCage/yankround.vim'
+# hook_add = '''
+# nmap p <Plug>(yankround-p)
+# xmap p <Plug>(yankround-p)
+# nmap P <Plug>(yankround-P)
+# nmap gp <Plug>(yankround-gp)
+# xmap gp <Plug>(yankround-gp)
+# nmap gP <Plug>(yankround-gP)
+# nmap <C-p> <Plug>(yankround-prev)
+# nmap <C-n> <Plug>(yankround-next)
+# '''
 
 
 ### ファイルを開く #########################################
@@ -75,6 +76,10 @@ nnoremap <space>o :NERDTreeToggle<CR>
 nnoremap <space>n :NERDTreeFocus<CR>
 let NERDTreeShowHidden=1
 '''
+
+# editor config
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
 
 # fzf
 # [[plugins]]

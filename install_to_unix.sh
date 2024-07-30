@@ -41,13 +41,13 @@ if [ ! -e ~/.volta ] ; then
   curl https://get.volta.sh | bash
 fi
 
-if [ ! -e ~/.cargo ] ; then
-  echo "install felix from cargo(rust)"
-  curl https://sh.rustup.rs -sSf | sh
-  echo "source $HOME/.cargo/env" >> ~/.zshrc
-  source $HOME/.cargo/env
-  cargo install felix
-fi
+# if [ ! -e ~/.cargo ] ; then
+#   echo "install felix from cargo(rust)"
+#   curl https://sh.rustup.rs -sSf | sh
+#   echo "source $HOME/.cargo/env" >> ~/.zshrc
+#   source $HOME/.cargo/env
+#   cargo install felix
+# fi
 
 if [ ! -e ~/.tmux/plugins/tpm ] ; then
   echo "install tpm"

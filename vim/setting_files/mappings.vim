@@ -13,6 +13,10 @@ nnoremap <space>h <C-w>h
 nnoremap <space>j <C-w>j
 nnoremap <space>k <C-w>k
 nnoremap <space>l <C-w>l
+nnoremap <space>H <C-w>H
+nnoremap <space>J <C-w>J
+nnoremap <space>K <C-w>K
+nnoremap <space>L <C-w>L
 nnoremap <C-u> <S-m><C-u>
 nnoremap <C-d> <S-m><C-d>
 vnoremap j gj
@@ -30,6 +34,7 @@ nnoremap ]b :bnext<CR>
 nnoremap y "+y
 nnoremap x "_x
 nnoremap s "_s
+vnoremap p "_dP
 nnoremap gj <S-j>
 vnoremap y "+y 
 vnoremap s "_s
